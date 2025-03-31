@@ -1,0 +1,40 @@
+<img src="{{MEDIA_CONVERT}}title.png" class="title_img" />
+
+<div class="story">
+
+
+</div>
+<p>
+	空でない整数のリスト(X)を与えられます。
+	このタスクでは、重複している要素だけでできているリストを返さなければいけません。
+	そのために、全てのユニークな要素(与えられたリストの中に１つだけ含まれる要素)を削除する必要があるでしょう。
+	このタスクを解くとき、要素の並びを変更してはいけません。
+	例: [1, 2, 3, 1, 3] 1と3は非ユニークな要素で、結果は[1, 3, 1, 3]になります。
+
+</p>
+
+<p style="text-align: center;">
+    <img title="non-unique-elements"
+         src="{{MEDIA}}non-unique-elements.png"
+         alt="non-unique-elements"
+         style="max-height: 160px"/>
+</p>
+
+<p><strong>入力: </strong>整数のリスト</p>
+
+<p><strong>出力: </strong>整数のイテラブル</p>
+<div class="for_info_only">
+    <p><strong>例:</strong></p>
+    <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+<p>
+    <strong>どのように使われるか:</strong>
+	このミッションは、配列の操作法を理解するのに役に立ちます。これは、より複雑なタスクを解決するための基礎になります。
+	このミッションの考え方は、簡単に実世界のタスクに一般化できます。
+	例えば: 低頻度の要素(ノイズ)を取り除くことで統計を明確にする必要があるときに使えます。
+
+</p>
+
+<p><strong>事前条件:<br> </strong>
+     0 < |X| < 1000<br>
+</p>

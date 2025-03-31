@@ -1,0 +1,127 @@
+<body data-author="oduvan">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Veuillez me donner un indice sur la façon de résoudre cette mission.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Vous devez vérifier si chaque élément de la liste donnée apparaît plus d'une fois dans celle-ci. Si c'est le cas, ajoutez cet élément à une nouvelle liste et renvoyez cette liste à la fin de votre fonction. Vous pouvez donc utiliser la méthode de liste <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list.count()</a> qui renvoie le nombre de fois que <b class="code">x</b> apparaît dans la liste.</p>
+        <p>
+            Voici un exemple:
+        </p>
+        <pre class="brush: python">
+a = [1, 2, 2, 3, 4, 5, 6, 3, 2]
+print(a.count(3))        
+        </pre>
+        <div class="output">
+            <p>Sortie:</p>
+            <pre>
+2</pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Comment puis-je utiliser ceci pour résoudre cette mission?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Il ne vous reste plus qu'à remplacer les commentaires par le code python approprié.
+        </p>
+        <pre class="brush: python">
+# init empty list
+for item in data:
+    if data.count(item)> 1:
+        # add the current item to the new list you initialized before
+# return the list
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Aidez-moi à remplacer les commentaires.
+        </p>
+    </div>
+    <div class="answer">
+        <p>Bien sûr. Voici ce que vous devez savoir.</p>
+        <p>Pour initialiser une liste vide, faites ceci:</p>
+        <pre class="brush: python">
+new_list = []
+        </pre>
+        <p>Pour ajouter un élément à la liste, faites ceci:</p>
+        <pre class="brush: python">
+new_list.append(item)
+        </pre>
+        <p>Pour retourner la liste, utilisez ceci:</p>
+        <pre class="brush: python">
+return new_list
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            À quoi devrait ressembler ma solution finale?
+        </p>
+    </div>
+    <div class="answer">
+        <p>Vous devez envelopper votre code dans une expression de fonction en utilisant des indications de type. Comme la valeur de sortie peut être n'importe quel itérateur, vous devez importer ce type avant la définition de la fonction.</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+
+    result = []
+    for item in data:
+        if data.count(item)> 1:
+            result.append(item)
+
+    return result
+        </pre>
+        </div>
+        <p>
+            Je vous recommande également de jeter un coup d'œil à tous les sites <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a> disponibles, afin de connaître les autres méthodes dont vous pourriez avoir besoin à l'avenir.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Est-il possible d'améliorer la solution?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Il est toujours possible d'améliorer quelque chose. Vous pouvez consulter le site <a target="_blank" href="https://wiki.python.org/moin/Generators">Generators for Python</a>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            D'accord. Comment puis-je l'utiliser?
+        </p>
+    </div>
+    <div class="answer">
+        <p>Voici une version plus simple:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+
+    return (a for a in data if data.count(a)> 1)
+        </pre>
+        </div>
+        <p>Elle est plus courte et encore plus facile à lire.</p>
+    </div>
+</div>
+</body>

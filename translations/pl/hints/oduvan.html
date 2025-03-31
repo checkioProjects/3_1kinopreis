@@ -1,0 +1,127 @@
+<body data-author="oduvan">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Proszę dać mi wskazówkę, jak rozwiązać tę misję.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Musi Pan sprawdzić każdy element na podanej liście, czy pojawia się na niej więcej niż raz. Jeśli tak, proszę dodać ten element do nowej listy i zwrócić tę listę na końcu funkcji. Można więc użyć metody listy <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list.count()</a>, która zwraca liczbę wystąpień <b class="code">x</b> na liście.</p>
+        <p>
+            Oto przykład:
+        </p>
+        <pre class="brush: python">
+a = [1, 2, 2, 3, 4, 5, 6, 3, 2]
+print(a.count(3))        
+        </pre>
+        <div class="output">
+            <p>Wyjście:</p>
+            <pre>
+2</pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jak mogę to wykorzystać do rozwiązania tej misji?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Wszystko, co muszą Państwo zrobić, to zastąpić komentarze odpowiednim kodem Pythona.
+        </p>
+        <pre class="brush: python">
+# init empty list
+for item in data:
+    if data.count(item)> 1:
+        # add the current item to the new list you initialized before
+# return the list
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Proszę pomóc mi zastąpić komentarze.
+        </p>
+    </div>
+    <div class="answer">
+        <p>Oczywiście, oto co musi Pan wiedzieć.</p>
+        <p>Aby zainicjować pustą listę, proszę zrobić to:</p>
+        <pre class="brush: python">
+new_list = []
+        </pre>
+        <p>Aby dodać element do listy proszę wykonać to:</p>
+        <pre class="brush: python">
+new_list.append(item)
+        </pre>
+        <p>Aby zwrócić listę proszę użyć tego:</p>
+        <pre class="brush: python">
+return new_list
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jak powinno wyglądać moje ostateczne rozwiązanie?
+        </p>
+    </div>
+    <div class="answer">
+        <p>Proszę opakować swój kod w wyrażenie funkcji używając podpowiedzi typu. Ponieważ wartością wyjściową może być dowolny Iterator, należy zaimportować ten typ przed definicją funkcji.</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+
+    result = []
+    for item in data:
+        if data.count(item)> 1:
+            result.append(item)
+
+    return result
+        </pre>
+        </div>
+        <p>
+            Zalecam również zapoznanie się ze wszystkimi dostępnymi <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a>, aby wiedzieć, jakie inne metody mogą być potrzebne w przyszłości.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Czy mogę w jakiś sposób poprawić to rozwiązanie?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Zawsze można coś poprawić. Proszę spojrzeć na stronę <a target="_blank" href="https://wiki.python.org/moin/Generators">Generators for Python</a>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ok. Jak mogę tego użyć?
+        </p>
+    </div>
+    <div class="answer">
+        <p>Oto prostsza wersja:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+
+    return (a for a in data if data.count(a)> 1)
+        </pre>
+        </div>
+        <p>Jest krótsza i jeszcze łatwiejsza do odczytania.</p>
+    </div>
+</div>
+</body>
